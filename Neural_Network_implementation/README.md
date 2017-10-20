@@ -29,7 +29,7 @@ node, we directly measure the difference between the network's activation and th
 compute their error using chain rule.
 
 
-### Gradient Tracking
+### Gradient Checking
 Before we go into training the network, which might take some time, we do a safety check to make sure we are computing the 
 correct gradient. We compare the numeric gradient with the gradient that we got from the previous step. 
 
