@@ -18,7 +18,7 @@ goes as follows:
 
 <img src="https://user-images.githubusercontent.com/17235054/31854935-c073c82c-b66e-11e7-8b02-1984b2771e9f.jpg" width=400 height=300>
 
-<img src="https://user-images.githubusercontent.com/17235054/31854936-c07f332e-b66e-11e7-9611-89c26dfad3e5.jpg" width=400 height=300>
+<img src="https://user-images.githubusercontent.com/17235054/31854936-c07f332e-b66e-11e7-9611-89c26dfad3e5.jpg" width=150 height=10>
 
 
 ## Non-linear Classification with Gaussian kernel
@@ -45,4 +45,49 @@ The result goes as follows:
 <img src="https://user-images.githubusercontent.com/17235054/31855322-e5f419fa-b676-11e7-8a29-0d9fc070f478.jpg" width=400 height=300>
 
 
-## Spam Classification - Preprocessing Email
+## Spam Classification - Introduction
+
+In the second part of this mini-project, we are going to classify email into spam and non-spam with high accuracy. We will use 
+SVMs to accomplish this task. The dataset included for this mini-project is based on a subset of the [SpamAssassin Public Corpus](http://spamassassin.apache.org/old/), and we will use the body of the emails. 
+
+## Spam Classification - Preprocessing Emails
+
+One of the examples of the email we are going to process is shown below:
+
+<img src="https://user-images.githubusercontent.com/17235054/31855519-d01bf766-b67a-11e7-94da-f25834dc7ee1.png" width=700 height=200>
+
+We implement the following preprocessing and normalization steps:
+
+- **Lower-casing:** The entire email is converted into lower case letter. 
+- **Stripping HTML:** Many emails comes with HTML tags and their formatting, we remove all the HTML tags so that only content remains.
+- **Normalizing URLs:** Replace URLs with text "httpaddr"
+- **Normalizing Email Address:** All email addresses are replaced with the text "emailaddr"
+- **Normalizing Numbers:** All numbers are replaced with text "number"
+- **Normalizing Dollars:** All dollar signs `$` are replaced with the text "dollar"
+- **Word Stemming:** Words are reduced to their stemmed form. 
+
+After preprocessing, the above text script is converted into:
+
+<img src="https://user-images.githubusercontent.com/17235054/31855658-6c09494c-b67d-11e7-8160-ba984c832fc7.png" width=700 height=200>
+
+## Spam Classification - Vocabulary Mapping
+After the preprocessing step, we have a list of words for each email. The next step is to choose which words we would like 
+to use in our classifier. For this case, we chose the most frequently occuring words as our set of words, and stored it in 
+*vocab.txt*. The words, who appears at least 100 times in the spam corpus, are chosen. 
+
+We now map each word in the preprocessed emails into a list of word indices that contains the index of the word in the vocabulary list. Below is the mapping of the sampled email:
+
+<img src="https://user-images.githubusercontent.com/17235054/31855738-11e6ead0-b67f-11e7-9a3b-41e36593b5e6.png" width=400 height=300>
+
+
+## Spam Classification - Extracting Features from Emails
+
+At this part, we use bag-of-word features to represent sample email. To be specific, we will convert each email into a vector of *n* dimension, where *n* equals to the number of words in vocabulary list. If the i-th word exist in the email, then the i-th entry of that vector equals 1, otherwise 0. 
+
+## Training and Testing for Spam Classification
+
+After feature extraction, we load the training dataset, and each sample in the training set would go through the preprocessing, mapping and feature extraction processing. The whole dataset turns into a matrix, whereas the row represent each samples and column represent features. 
+
+The training accuray is 99.8%
+And the testing accuracy is 98.9%
+
