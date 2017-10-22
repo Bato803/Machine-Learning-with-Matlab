@@ -56,8 +56,34 @@ We found 117 anomalies in our examples and the best f1 score is 0.62.
 
 ## Recommender Systems
 
-In this part of the mini-project, we will implement collaborative filtering learning algorithm and apply it to a dataset of movie ratings. This dataset consisted of ratings on a scale of 1 to 5. The dataset has 943 users and 1682 movies. 
+In this part of the mini-project, we will implement collaborative filtering learning algorithm and apply it to a dataset of movie ratings. This dataset consisted of ratings on a scale of 1 to 5. The dataset has 943 users and 1682 movies. The objective of collaborative filtering is to predict movie ratings for the movies that users have not yet rated. This will allow us to recommend the movies with the highest predicted ratings to the user.
 
 
-### Movie rating dataset
+### Collaborative filtering learning algorithm
+
+The collaborative filtering cost function is given by
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=J(x^{(1)},...,&space;x^{(n_m)},&space;\theta^{(1)},&space;...,&space;\theta{(n_u)})&space;=&space;\frac{1}{2}\sum_{(i,j):r(i,j)=1}((\theta^{(j)})^Tx^{(i)}-y^{(i,j)})^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?J(x^{(1)},...,&space;x^{(n_m)},&space;\theta^{(1)},&space;...,&space;\theta{(n_u)})&space;=&space;\frac{1}{2}\sum_{(i,j):r(i,j)=1}((\theta^{(j)})^Tx^{(i)}-y^{(i,j)})^2" title="J(x^{(1)},..., x^{(n_m)}, \theta^{(1)}, ..., \theta{(n_u)}) = \frac{1}{2}\sum_{(i,j):r(i,j)=1}((\theta^{(j)})^Tx^{(i)}-y^{(i,j)})^2" /></a>
+
+The parameters that we are going to learn is *X* and *theta*, they are (number of movie, 100) and (number of user, 100) matrix respectively. And we'll use off-the-shelf minimizer *fmincg* to minimize the cost. 
+
+
+### Collaborative filtering gradient
+
+The gradient of the cost function is given by
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;J}{\partial&space;x_k^{(i)}}&space;=&space;\sum_{j:r(i,j)=1}((\theta^{(j)})^T&space;-&space;y^{(i,j)})\theta_k^{(j)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\partial&space;J}{\partial&space;x_k^{(i)}}&space;=&space;\sum_{j:r(i,j)=1}((\theta^{(j)})^T&space;-&space;y^{(i,j)})\theta_k^{(j)}" title="\frac{\partial J}{\partial x_k^{(i)}} = \sum_{j:r(i,j)=1}((\theta^{(j)})^T - y^{(i,j)})\theta_k^{(j)}" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;J}{\partial&space;\theta_k^{(j)}}&space;=&space;\sum_{i:r(i,j)=1}((\theta^{(j)})^Tx^{(i)}&space;-&space;y^{(i,j)})x_k^{(i)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\partial&space;J}{\partial&space;\theta_k^{(j)}}&space;=&space;\sum_{i:r(i,j)=1}((\theta^{(j)})^Tx^{(i)}&space;-&space;y^{(i,j)})x_k^{(i)}" title="\frac{\partial J}{\partial \theta_k^{(j)}} = \sum_{i:r(i,j)=1}((\theta^{(j)})^Tx^{(i)} - y^{(i,j)})x_k^{(i)}" /></a>
+
+
+### Regularized cost function
+
+Add regularization to the original cost function and their graident.
+
+### Learning movie recommendations
+
+**We can add our own movie preference, so that later when we train the algorithm, it can recommend movie for us! **
+
+
 
