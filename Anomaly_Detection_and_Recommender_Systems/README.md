@@ -83,7 +83,14 @@ Add regularization to the original cost function and their graident.
 
 ### Learning movie recommendations
 
-**We can add our own movie preference, so that later when we train the algorithm, it can recommend movie for us!**
+*We can add our own movie preference, so that later when we train the algorithm, it can recommend movie for us!*
 
+So before I use *fmincg* to minimize the cost function, I filled in my own preference for movie, below are some of the selected movie I filled in:
 
+<img src="https://user-images.githubusercontent.com/17235054/31865321-4059d906-b73b-11e7-90fc-04f726be15b9.png" width=400 height=300>
 
+After the training, the movies that our model suggest me watch are:
+
+<img src="https://user-images.githubusercontent.com/17235054/31865351-b4e9d604-b73b-11e7-81d6-3419d704089b.png" width=800 height=500>
+
+Haha, it looks nice. I would definitely try watching them some day :)
