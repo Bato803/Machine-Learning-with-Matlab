@@ -56,4 +56,8 @@ We found 117 anomalies in our examples and the best f1 score is 0.62.
 
 ## Recommender Systems
 
+In this part of the mini-project, we will implement collaborative filtering learning algorithm and apply it to a dataset of movie ratings. This dataset consisted of ratings on a scale of 1 to 5. The dataset has 943 users and 1682 movies. 
+
+
+### Movie rating dataset
 
