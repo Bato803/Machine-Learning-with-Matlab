@@ -60,3 +60,70 @@ corresponds to compressing the original image by about a factor of 6.
 The image before and after compression goes as follows:
 
 <img src="https://user-images.githubusercontent.com/17235054/31856913-d0aadda6-b69c-11e7-8881-dac941cf2fab.jpg" width=800 height=300>
+
+
+## Principal Component Analysis (PCA)
+
+In this part of the mini-project, we will use PCA to perform dimension reduction. We will first experiment it with an example 
+2D dataset, and then use it on a bigger dataset of 5000 face image dataset. 
+
+### Example dataset
+
+The example dataset is visualized as below:
+
+<img src="https://user-images.githubusercontent.com/17235054/31856964-e8b1df56-b69e-11e7-9756-c4ac8cbd86c0.jpg" width=400 height = 300> 
+
+### Implementing PCA
+
+To implement PCA, we first compute the covariance matrix of the data. Then, we use MATLAB's built-in function SVD to compute 
+the eigenvectors. These will corespond to the principal components of variation in the data. The implementation detail goes as 
+follows:
+
+- Normalization. Subtracting the mean value of each feature from the dataset, and scaling each dimension so that they are in 
+the same ranage. 
+- Compute the covariance matrix of the data:
+
+     <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;=&space;\frac{1}{m}X^TX" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;=&space;\frac{1}{m}X^TX" title="\sum = \frac{1}{m}X^TX" /></a>
+  
+- After computing the covariance matrix, we run SVD on ti to compute the principal components. 
+
+The principal component found is plotted as follows:
+
+<img src="https://user-images.githubusercontent.com/17235054/31857019-312ef2a4-b6a0-11e7-97b3-62853e5f9466.jpg" width=400 height=300>
+
+### Dimension Reduction with PCA
+
+After computing the principal components, we use them to reduce the feature dimension of sample dataset by projecting each 
+example onto a lower dimension space. 
+
+We first project the 2 dimension data into one dimension, concretely, we are projecting each sample data into the top component in the eigenvector. We got an vector with the size of dataset after this step.
+
+Then we recover the data by projecting them back onto the original high dimensional space. And it's visualized as follows, the original data points are indicated with the blue circles, while the projected data points are indicated with red circles. The projection effectively retains the information in the direction given by the eigenvector. 
+
+<img src="https://user-images.githubusercontent.com/17235054/31857089-41aaf144-b6a2-11e7-994e-840abddbee0d.jpg" width=400 height=300>
+
+## Face Image Dataset
+
+In this part of mini-project, we will run PCA on face images. The dataset contains 5000 faces and each `(32,32)` in grayscale. 
+Each row of the matrix contains one face image. First 100 faces are shown below:
+
+<img src="https://user-images.githubusercontent.com/17235054/31857104-c51c5d88-b6a2-11e7-8375-a784422c66a4.jpg" width=400 height=300>
+
+### PCA on Faces
+
+To run PCA on faces, we first normalize the dataset by substracting the mean of each feature from the data matrix. And then run to PCA to obtain principal components of the dataset. Each row in the principal component is a vector of length 1024, and we reshape them back into `(32,32)`. And some of them are visualized as follows:
+
+<img src="https://user-images.githubusercontent.com/17235054/31857137-ad904aca-b6a3-11e7-9fca-9df0f80b6037.jpg" width=400 height=300>
+
+### Dimension Reduction on Faces
+
+Now that we have the principal components of face dataset, this allows us to reduce the dimension from 1024 dimension into a 
+smaller dimension to speed up our learning algorithm if we wanted to train our model on this dataset. 
+
+Next, we project the face dataset onto only the first 100 principal components. After that, each face is now described by a vector of 100, instead of 1024. 
+
+To understand what is lost in the dimension reduction, we recover the data using only the projected dataset. The result is shown below:
+
+<img src="https://user-images.githubusercontent.com/17235054/31857162-6cda1708-b6a4-11e7-842e-504273e1f06f.jpg" width=800 height=600>
+
+We can infer from the reconstruction that, the general structure and appearance of the face are kept while the fine details are lost. 
