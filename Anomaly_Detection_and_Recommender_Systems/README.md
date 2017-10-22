@@ -83,7 +83,7 @@ Add regularization to the original cost function and their graident.
 
 ### Learning movie recommendations
 
-**We can add our own movie preference, so that later when we train the algorithm, it can recommend movie for us! **
+**We can add our own movie preference, so that later when we train the algorithm, it can recommend movie for us!**
 
 
 
