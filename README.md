@@ -1,4 +1,7 @@
 # Machine-Learning-with-Matlab
+
+<img src="https://user-images.githubusercontent.com/17235054/32409006-8da6ec6a-c179-11e7-9079-150c53ce60aa.jpg" width=500 height=400> 
+
 Common Machine Learning algorithms implementation in Matlab
 
 The algorithms and applications that we implemented are listed below. In each folder, there is a README file demonstring the 
