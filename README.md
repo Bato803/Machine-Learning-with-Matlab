@@ -18,18 +18,14 @@ implementation step by step. I tried to make it as clear as possible so that peo
 
 - Week 4&5 - [Outline](https://github.com/Bato803/Machine-Learning-with-Matlab/tree/master/Neural_Network_implementation)
 - Week 4&5 - PA - [Neural Network Implementation and Learning](https://github.com/Bato803/Machine-Learning-with-Matlab/blob/master/Neural_Network_implementation/ex4.m)
-
 - Week 6 - [Outline](https://github.com/Bato803/Machine-Learning-with-Matlab/tree/master/Regularized_Linear_Regression)
 - Week 6 - PA - [Regularized Linear Regression and Bias-Variance](https://github.com/Bato803/Machine-Learning-with-Matlab/blob/master/Regularized_Linear_Regression/ex5.m)
-
 - Week 7 - [Outline](https://github.com/Bato803/Machine-Learning-with-Matlab/tree/master/Support_Vector_Machine)
 - Week 7 - PA1 - [Support Vector Machine Implementation](https://github.com/Bato803/Machine-Learning-with-Matlab/blob/master/Support_Vector_Machine/ex6.m)
 - Week 7 - PA2 - [Spam Email Classification with SVM](https://github.com/Bato803/Machine-Learning-with-Matlab/blob/master/Support_Vector_Machine/ex6_spam.m)
-
 - Week 8 - [Outline](https://github.com/Bato803/Machine-Learning-with-Matlab/tree/master/K_means_PCA)
 - Week 8 - PA1 - [K-means Clustering and Image Compression](https://github.com/Bato803/Machine-Learning-with-Matlab/blob/master/K_means_PCA/ex7.m)
 - Week 8 - PA2 - [Principle Component Analysis and Eigen Faces](https://github.com/Bato803/Machine-Learning-with-Matlab/blob/master/K_means_PCA/ex7_pca.m)
-
 - Week 9 - [Outline](https://github.com/Bato803/Machine-Learning-with-Matlab/tree/master/Anomaly_Detection_and_Recommender_Systems)
 - Week 9 - PA1 - [Anomaly Detection of failing Servers](https://github.com/Bato803/Machine-Learning-with-Matlab/blob/master/Anomaly_Detection_and_Recommender_Systems/ex8.m)
 - Week 9 - PA2 - [Collaborative Filtering of Movie Recommendation](https://github.com/Bato803/Machine-Learning-with-Matlab/blob/master/Anomaly_Detection_and_Recommender_Systems/ex8_cofi.m)
