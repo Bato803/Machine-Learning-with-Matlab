@@ -13,8 +13,7 @@ a 400-dimension vector.
 <img src="https://user-images.githubusercontent.com/17235054/31751466-70404c6c-b453-11e7-8407-e374555a6579.jpg" width="400" height="300"/>
 
 ### Implement forward propagation
-Forward propagation at this time is implemented without regularization for the purpose of easy debugging. The model we use here
-is fully connected neural network, and we choose to use the classic cross-entropy loss function.(*K* is the number of labels, *m*
+Forward propagation at this time is implemented without regularization for the purpose of easy debugging. The model we use here is fully connected neural network, and we choose to use the classic cross-entropy loss function.(*K* is the number of labels, *m*
 refers to the number of examples)
 <a href="https://www.codecogs.com/eqnedit.php?latex=J(\theta)&space;=&space;\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{K}[-y_{k}^{(i)}log((h_{\theta}(x^{i}))_k)-(1-y_k^{i})log(1-(h_{\theta}(x^{(i)}))_k)]" target="_blank"><img src="https://latex.codecogs.com/png.latex?J(\theta)&space;=&space;\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{K}[-y_{k}^{(i)}log((h_{\theta}(x^{i}))_k)-(1-y_k^{i})log(1-(h_{\theta}(x^{(i)}))_k)]" title="J(\theta) = \frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{K}[-y_{k}^{(i)}log((h_{\theta}(x^{i}))_k)-(1-y_k^{i})log(1-(h_{\theta}(x^{(i)}))_k)]" /></a>
 
